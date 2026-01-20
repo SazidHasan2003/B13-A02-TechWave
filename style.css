@@ -276,6 +276,124 @@ nav {
   text-align: center;
 }
 
+.feature-container {
+  width: 100%;
+  background-color: #1a0b2e;
+  padding: 120px 0;
+}
+
+.feature-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-container .feature-content h2 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.feature-card-container {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.card-content {
+  padding: 24px;
+  background-color: #250d44;
+  color: #ffffff;
+}
+
+.card {
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.feature-container .card-content h2 {
+  text-align: left;
+  margin-top: 24px;
+  font-size: 24px;
+}
+
+.card-content p {
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.card-content div {
+  color: #00ff88;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  gap: 6px;
+}
+
+.meet-host {
+  width: 100%;
+  margin-top: 80px;
+}
+
+.meet-host h2 {
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.about-host h3 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+}
+.about-host p {
+  color: #ffffff;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.host-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  background-color: #250d44;
+  border-radius: 40px;
+}
+
+.host-social-logo {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.host-social-logo div {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: 1px solid #533c72;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.host-social-logo div:hover {
+  background-color: rgba(83, 60, 114, 0.2);
+  transform: scale(1.05);
+}
+
 @media (max-width: 576px) {
   nav {
     padding: 16px 20px;
@@ -289,15 +407,14 @@ nav {
     display: none;
   }
 
-  /* show hamburger */
   .hamburger {
     display: block;
     cursor: pointer;
   }
 
   .logo a {
-    width: 137px;
-    height: 20px;
+    width: auto;
+    font-size: 32px;
   }
 
   .hero-container {
@@ -306,22 +423,38 @@ nav {
   }
 
   .content-background {
-    width: 280px;
-    height: 280px;
+    width: min(280px, 90%);
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .content-background img {
+    max-width: 80%; /* prevent overflow */
+    height: auto;
   }
 
   .content-background .new {
-    left: 215px;
+    top: 5%;
+    right: 5%; /* avoid fixed px */
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
   }
 
   .hero-content .hero-text h3 {
-    font-size: 40px;
+    font-size: 36px;
     margin-top: 24px;
   }
 
   .hero-content .hero-text p {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px;
+    font-size: 14px;
   }
 
   .about-podcust-container {
@@ -331,13 +464,75 @@ nav {
   .leader-content {
     margin-top: 40px;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 20px;
   }
 
   .leader-content div h2 {
-    font-size: 40px;
-    color: #00ff88;
-    text-align: center;
-    font-weight: 900;
+    font-size: 32px;
+  }
+
+  .feature-container {
+    padding: 60px 20px;
+  }
+
+  .feature-content h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .feature-card-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    border-radius: 16px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .card .card-vdo iframe {
+    width: 100%;
+    height: 225px;
+  }
+
+  .card-content h2 {
+    font-size: 20px;
+    margin-top: 16px;
+  }
+
+  .card-content p {
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+
+  .card-content div {
+    font-size: 12px;
+    gap: 4px;
+  }
+
+  .meet-host h2 {
+    font-size: 32px;
+  }
+
+  .host-content {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .about-host h3 {
+    font-size: 24px;
+  }
+
+  .about-host p {
+    font-size: 14px;
+  }
+
+  .host-social-logo div {
+    width: 32px;
+    height: 32px;
   }
 }
