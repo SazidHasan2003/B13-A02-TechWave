@@ -44,7 +44,8 @@ header {
 nav {
   width: 100%;
   background-color: #1a0b2e;
-  padding: 1rem 12.5rem;
+  /* padding: 1rem 12.5rem; */
+  padding: 1rem clamp(1rem, 10vw, 12.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,20 +99,23 @@ nav {
 
 .hero-container {
   width: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   background-image: url("./assets/hero-bg.png");
   background-size: cover;
 
   background-position: center center;
   background-repeat: no-repeat;
-  padding: 101px 525px;
+  padding: 101px 0px;
 }
 
 .hero-content {
+  max-width: 550px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 45px;
 }
 
 .hero-content .hero-text h3 {
@@ -156,13 +160,27 @@ nav {
   transform: scale(1.05);
 }
 
-.content-background {
+/* .content-background {
   display: flex;
   align-items: center;
   width: 350px;
   height: 350px;
   background-image: url("./assets/hero-circle.png");
   position: relative;
+} */
+
+.content-background {
+  width: min(320px, 90%);
+  aspect-ratio: 1 / 1;
+
+  background: url("./assets/hero-circle.png") center / contain no-repeat;
+
+  position: relative;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content-background img {
@@ -182,7 +200,7 @@ nav {
   }
 }
 
-.content-background .new {
+/* .content-background .new {
   width: 75px;
   height: 38px;
   display: inline-block;
@@ -193,6 +211,69 @@ nav {
   position: absolute;
   left: 275px;
   top: 30px;
+} */
+
+.content-background .new {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+
+  width: 75px;
+  height: 38px;
+  background-color: #00ff88;
+  border-radius: 1000px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-podcust-container {
+  width: 100%;
+  background-color: #1a0b2e;
+  /* padding: 50px 200px 120px 200px; */
+  padding: 50px clamp(20px, 10vw, 200px) 120px;
+}
+
+.about-podcust-container .about-podcust-content h3 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58px;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.about-podcust-container .about-podcust-content .about-podcust-pera-1 {
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about-podcust-container .about-podcust-pera-2 {
+  margin-top: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.leader-content {
+  margin-top: 160px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+}
+
+.leader-content div h2 {
+  font-size: 48px;
+  color: #00ff88;
+  text-align: center;
+  font-weight: 900;
+}
+
+.leader-content div p {
+  color: #ffffff;
+  text-align: center;
 }
 
 @media (max-width: 576px) {
@@ -218,19 +299,45 @@ nav {
     width: 137px;
     height: 20px;
   }
-}
 
-.hero-container {
-  padding: 40px 20px;
-  background-position: center center;
-}
+  .hero-container {
+    padding: 40px 20px;
+    background-position: center center;
+  }
 
-.hero-content .hero-text h3 {
-  font-size: 40px;
-  margin-top: 24px;
-}
+  .content-background {
+    width: 280px;
+    height: 280px;
+  }
 
-.hero-content .hero-text p {
-  margin-left: 20px;
-  margin-right: 20px;
+  .content-background .new {
+    left: 215px;
+  }
+
+  .hero-content .hero-text h3 {
+    font-size: 40px;
+    margin-top: 24px;
+  }
+
+  .hero-content .hero-text p {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .about-podcust-container {
+    padding: 40px 20px;
+  }
+
+  .leader-content {
+    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .leader-content div h2 {
+    font-size: 40px;
+    color: #00ff88;
+    text-align: center;
+    font-weight: 900;
+  }
 }
